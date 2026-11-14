@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0b0f19;border-radius:16px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <!-- Glowing Orbs Gradients -->
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-violet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-emerald" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#f8fafc" />
+      <stop offset="70%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.6"/>
+      <circle cx="40" cy="0" r="1.5" fill="#38bdf8" fill-opacity="0.4" />
+    </pattern>
+
+    <style>
+      /* Dynamic Animations */
+      @keyframes pulseGlow {
+        0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.6; }
+        50% { transform: scale(1.15) translate(-15px, 10px); opacity: 0.9; }
+      }
+      @keyframes pulseGlow2 {
+        0%, 100% { transform: scale(1) translate(0px, 0px); opacity: 0.5; }
+        50% { transform: scale(1.2) translate(20px, -15px); opacity: 0.85; }
+      }
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-25px) translateX(15px); opacity: 0.8; }
+        100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+      }
+      @keyframes streamFlow {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes cardBob {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+
+      .glow-1 { animation: pulseGlow 9s ease-in-out infinite; transform-origin: center; }
+      .glow-2 { animation: pulseGlow2 12s ease-in-out infinite; transform-origin: center; }
+      .p-1 { animation: floatParticle 6s ease-in-out infinite; }
+      .p-2 { animation: floatParticle 8s ease-in-out infinite 1.5s; }
+      .p-3 { animation: floatParticle 7s ease-in-out infinite 3s; }
+      .p-4 { animation: floatParticle 9s ease-in-out infinite 2s; }
+      .stream-line { stroke-dasharray: 20 15; animation: streamFlow 14s linear infinite; }
+      .floating-pill { animation: cardBob 5s ease-in-out infinite; }
+      .floating-pill-delay { animation: cardBob 5.5s ease-in-out infinite 2.5s; }
+    </style>
+  </defs>
+
+  <!-- Deep Canvas Base -->
+  <rect width="1200" height="360" fill="url(#bg-grad)" />
+
+  <!-- Animated Glowing Background Elements (Deep Layer) -->
+  <g opacity="0.8">
+    <circle class="glow-1" cx="220" cy="180" r="260" fill="url(#glow-cyan)" />
+    <circle class="glow-2" cx="980" cy="160" r="280" fill="url(#glow-violet)" />
+    <circle class="glow-1" cx="620" cy="300" r="220" fill="url(#glow-emerald)" />
+  </g>
+
+  <!-- Cybernetic Grid Overlay -->
+  <rect width="1200" height="360" fill="url(#cyber-grid)" />
+
+  <!-- Animated Data / Connection Streams (Background) -->
+  <g fill="none" opacity="0.45">
+    <path class="stream-line" d="M -50,90 Q 300,40 600,120 T 1250,90" stroke="#38bdf8" stroke-width="1.8" />
+    <path class="stream-line" d="M -50,280 Q 350,330 700,240 T 1250,290" stroke="#818cf8" stroke-width="1.8" />
+    <path class="stream-line" d="M 100,-20 Q 350,200 650,170 T 1150,380" stroke="#34d399" stroke-width="1.2" stroke-opacity="0.3" />
+  </g>
+
+  <!-- Ambient Floating Particles (Behind Text) -->
+  <g fill="#38bdf8">
+    <circle class="p-1" cx="180" cy="80" r="3" opacity="0.6" />
+    <circle class="p-2" cx="340" cy="290" r="2" opacity="0.5" />
+    <circle class="p-3" cx="890" cy="70" r="3.5" fill="#818cf8" opacity="0.7" />
+    <circle class="p-4" cx="1020" cy="270" r="2.5" fill="#34d399" opacity="0.6" />
+    <circle class="p-1" cx="720" cy="45" r="2" fill="#38bdf8" opacity="0.4" />
+    <circle class="p-2" cx="140" cy="240" r="2.5" fill="#818cf8" opacity="0.5" />
+  </g>
+
+  <!-- Subtle Side Accents (Cards anchored away from center to protect foreground readability) -->
+  <g class="floating-pill" opacity="0.85">
+    <!-- Left Feature Node -->
+    <rect x="50" y="45" width="165" height="42" rx="21" fill="#1e293b" fill-opacity="0.75" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1" />
+    <circle cx="72" cy="66" r="6" fill="#38bdf8" />
+    <text x="88" y="71" font-size="12" font-weight="600" fill="#94a3b8" letter-spacing="0.5">🔒 ZERO TRUST E2EE</text>
+  </g>
+
+  <g class="floating-pill-delay" opacity="0.85">
+    <!-- Right Feature Node -->
+    <rect x="975" y="45" width="175" height="42" rx="21" fill="#1e293b" fill-opacity="0.75" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1" />
+    <circle cx="997" cy="66" r="6" fill="#818cf8" />
+    <text x="1013" y="71" font-size="12" font-weight="600" fill="#cbd5e1" letter-spacing="0.5">⚡ LOCAL-FIRST SYNC</text>
+  </g>
+
+  <!-- High-Readability Glass Scrim Behind Central Typography -->
+  <rect x="180" y="85" width="840" height="190" rx="24" fill="#090d16" fill-opacity="0.82" stroke="#334155" stroke-opacity="0.35" stroke-width="1" filter="drop-shadow(0 20px 30px rgba(0,0,0,0.7))"/>
+
+  <!-- FOREGROUND TEXT SECTION (Anchored, crystal clear, unblocked) -->
+  <g text-anchor="middle">
+    <!-- Micro Tag / Kicker -->
+    <rect x="475" y="105" width="250" height="26" rx="13" fill="url(#badge-grad)" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1" />
+    <text x="600" y="122" font-size="11" font-weight="700" fill="#38bdf8" letter-spacing="1.5">CURATED AWESOME ARCHIVE</text>
+
+    <!-- Main Title -->
+    <text x="600" y="180" font-size="37" font-weight="800" fill="url(#title-grad)" letter-spacing="-0.8">
+      Private Team Collaboration Workspaces
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="218" font-size="15" font-weight="400" fill="#94a3b8" letter-spacing="0.2">
+      Self-Hosted • Sovereign Cloud • End-to-End Encrypted • Real-time Collaboration
+    </text>
+
+    <!-- Bottom Feature Chips Inside Scrim -->
+    <g transform="translate(0, 235)">
+      <!-- Chip 1 -->
+      <rect x="290" y="5" width="130" height="24" rx="6" fill="#1e293b" fill-opacity="0.8" stroke="#475569" stroke-width="0.8"/>
+      <text x="355" y="21" font-size="11" font-weight="600" fill="#38bdf8">🛡️ Self-Hosted</text>
+
+      <!-- Chip 2 -->
+      <rect x="435" y="5" width="150" height="24" rx="6" fill="#1e293b" fill-opacity="0.8" stroke="#475569" stroke-width="0.8"/>
+      <text x="510" y="21" font-size="11" font-weight="600" fill="#a78bfa">🔐 Zero-Knowledge</text>
+
+      <!-- Chip 3 -->
+      <rect x="600" y="5" width="140" height="24" rx="6" fill="#1e293b" fill-opacity="0.8" stroke="#475569" stroke-width="0.8"/>
+      <text x="670" y="21" font-size="11" font-weight="600" fill="#34d399">🌐 Offline-First</text>
+
+      <!-- Chip 4 -->
+      <rect x="755" y="5" width="155" height="24" rx="6" fill="#1e293b" fill-opacity="0.8" stroke="#475569" stroke-width="0.8"/>
+      <text x="832" y="21" font-size="11" font-weight="600" fill="#f472b6">🤖 AI Teammates</text>
+    </g>
+  </g>
+
+  <!-- Border Frame Accent -->
+  <rect x="1" y="1" width="1198" height="358" rx="15" fill="none" stroke="#334155" stroke-width="1.2" stroke-opacity="0.7"/>
+</svg>
