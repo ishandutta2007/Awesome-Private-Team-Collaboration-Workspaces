@@ -1,148 +1,248 @@
-# Awesome-Private-Team-Collaboration-Workspaces
+# Awesome Private Team Collaboration Workspaces [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-# Awesome Private Team Collaboration Workspaces
-
-> A curated list of top Private Team Collaboration Workspace platforms — both SaaS/Hosted commercial suites and open-source alternatives for self-hosted, private-by-design team communication, documentation, and project coordination.
-> 🌟 Star this repo if you find it useful! 🌟
+> A curated list of top Private Team Collaboration Workspace platforms — featuring SaaS & commercial cloud suites and privacy-first, self-hosted open-source alternatives for secure team communication, document management, knowledge sharing, and agile project coordination.
 
 ---
 
-## 📋 Table of Contents
+## 📑 Table of Contents
 
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Slack](#slack)
-  - [Microsoft Teams](#microsoft-teams)
-  - [Notion](#notion)
-  - [Google Workspace](#google-workspace)
-  - [Asana](#asana)
+- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [SaaS & Hosted Platforms](#-saas--hosted-platforms)
 - [Open-Source Software](#-open-source-software)
-  - [Calab](#calab)
-  - [OneCamp](#onecamp)
-  - [Colanode](#colanode)
-  - [CryptPad](#cryptpad)
-  - [Mattermost](#mattermost)
-  - [Huly](#huly)
-  - [Buzz](#buzz)
-  - [Folio](#folio)
-  - [Sync-in](#sync-in)
-- [Comparison at a Glance](#-comparison-at-a-glance)
+  - [AppFlowy](#appflowy-)
+  - [AFFiNE](#affine-)
+  - [Rocket.Chat](#rocketchat-)
+  - [Outline](#outline-)
+  - [Mattermost](#mattermost-)
+  - [Nextcloud Hub](#nextcloud-hub-)
+  - [Buzz](#buzz-)
+  - [Huly](#huly-)
+  - [Zulip](#zulip-)
+  - [Element](#element-)
+  - [Planka](#planka-)
+  - [CryptPad](#cryptpad-)
+  - [Colanode](#colanode-)
+  - [Sync-in](#sync-in-)
+  - [Calab](#calab-)
+  - [Folio](#folio-)
+  - [OneCamp](#onecamp-)
+- [Feature Matrix & Comparison at a Glance](#-feature-matrix--comparison-at-a-glance)
+- [Selection Guide: Choosing the Right Private Workspace](#-selection-guide-choosing-the-right-private-workspace)
 - [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 🟦 SaaS / Hosted Platforms
+## 📈 Sector Overview & Market Dynamics
 
-Commercial, cloud-hosted Private Team Collaboration Workspace platforms. These are not open-source but are included as reference points for feature comparison.
-
-### Slack
-**Type:** Channel-based messaging with external collaboration via Slack Connect
-Slack is the most widely adopted team messaging platform, with channels, threads, direct messages, Huddles, and an extensive app ecosystem. **Slack Connect** enables secure collaboration with external organizations in shared channels, making it a common choice for private inter-company workspaces. The trade-off is per-seat pricing that scales with team size, and data residing on Slack's infrastructure.
-
-### Microsoft Teams
-**Type:** Collaboration hub within Microsoft 365
-Teams bundles chat, meetings, file collaboration, and app integrations into a single workspace. Private channels and guest access provide controlled collaboration boundaries. Deeply embedded in Microsoft 365, it is the default for organizations standardized on Microsoft, with data governed by the tenant's compliance and retention policies.
-
-### Notion
-**Type:** Flexible workspace with teamspaces and permission controls
-Notion combines documents, databases, and wikis in a highly flexible workspace. **Teamspaces** provide private collaboration areas for teams, with granular page-level permissions and guest access. The trade-off is that governance requires team conventions to prevent fragmentation as the organization scales.
-
-### Google Workspace
-**Type:** Productivity suite with shared drives and spaces
-Google Workspace provides Gmail, Drive, Docs, Meet, and Chat with **shared drives** that offer team-owned storage and granular permissions. **Google Chat spaces** provide private team communication. Data residency and access controls are managed through the Admin console, making it the natural choice for Google-first organizations.
-
-### Asana
-**Type:** Work management with private projects and portfolios
-Asana provides task and project management with **private projects** visible only to invited members, and portfolios for cross-project visibility. It is a strong choice for teams needing structured work tracking with controlled access, though it is not a full communication or documentation workspace.
+The global team collaboration software market is estimated between **$20.8 Billion and $44.6 Billion**, projected to exceed **$55 Billion by 2030** with an annual growth rate (CAGR) of 10% to 12%. The sector is **moderately fragmented**: mega-cap hyper-scalers (Microsoft, Alphabet, Salesforce) consolidate broad office suites and core channel messaging, while hundreds of specialized and open-source ISVs capture high-growth market share across niche disciplines such as local-first offline wikis, end-to-end encrypted file sharing, and self-hosted private workflows subject to stringent global data residency regulations (GDPR, HIPAA, DORA).
 
 ---
 
-## 🟩 Open-Source Software
+## 🏢 SaaS & Hosted Platforms
 
-Self-hosted, community-driven Private Team Collaboration Workspace tools. The open-source ecosystem spans **all-in-one workspaces**, **encrypted collaboration suites**, **developer-focused chat**, and **file-centric collaboration platforms**.
+A comparison of leading commercial cloud collaboration workspaces, sorted by parent company market capitalization and scale (descending).
 
-### Calab
-**Stack:** LiveKit / Node.js / Python / Go / PostgreSQL | **License:** Open Source
-Calab is an open-source workspace for teams combining chat, voice and video calls, task boards, wiki, file drive, calendar, and even emails in one self-hosted app . Key private-team features include **workspace-scoped OIDC SSO** with LDAPS lifecycle sync, **private and closed rooms and boards that even administrators cannot see**, and role-based rights checked on the server . Media uses DTLS-SRTP encryption, with automatic TURN/TLS fallback behind VPNs. Deploys via Docker Compose with hardened containers and automatic Let's Encrypt certificates. **Important:** There is no end-to-end encryption yet—media goes through your own media server, so you control the infrastructure but the server can theoretically access media streams .  
-**Best for:** Teams wanting a feature-dense self-hosted workspace with strict room-level privacy controls and enterprise SSO, accepting that E2EE is not yet available.
-
-### OneCamp
-**Stack:** Go / Next.js / LiveKit / Tiptap / PostgreSQL | **License:** AGPL-3.0
-OneCamp is a self-hosted all-in-one workspace combining real-time chat (channels, DMs, threads), tasks and Kanban boards, collaborative docs with multiplayer cursors, tables, whiteboards (Excalidraw), HD video meetings with recording and live captions, and a calendar . It includes **AI teammates bounded by the live permissions of the user who authorized them**, running through your choice of model, with an audit trail . Enterprise sign-in covers **SAML, OIDC, LDAP, SCIM provisioning, and MFA**. Deploys as a single Docker Compose stack with Postgres, Dgraph, Redis, MinIO, EMQX, and Traefik . **Trade-off:** The backend requires a license from the vendor, though both editions are AGPL-3.0 .  
-**Best for:** Teams wanting to consolidate chat, tasks, docs, whiteboards, and video meetings into one self-hosted platform with enterprise authentication and AI agent support.
-
-### Colanode
-**Stack:** TypeScript / PostgreSQL (pgvector) / Redis / S3 | **License:** Apache-2.0
-Colanode is an open-source, **local-first** collaboration workspace combining team chat channels, collaborative pages and documents, structured databases, and file sharing in one self-hosted application, positioned as a private alternative to Slack and Notion . Because it is local-first, desktop and web clients keep a **full local copy of each workspace**, so the interface stays fast and keeps working offline, then syncs changes back when the connection returns . Deploys with PostgreSQL with pgvector, Valkey, and a hardened nginx reverse proxy. Public signup is closed by default, so a fresh instance is never world-joinable .  
-**Best for:** Teams prioritizing offline-first collaboration and data ownership, wanting a combined chat + Notion-style workspace with local copies and controlled access.
-
-### CryptPad
-**Stack:** JavaScript / (Check repository) | **License:** Open Source
-CryptPad is a **fully end-to-end encrypted** collaboration suite offering alternatives to Google Docs, Trello, and whiteboards, with over 200,000 monthly users and 1,500+ self-hosted instances . Users can co-edit documents, manage Kanban boards, host whiteboard sessions, and create forms—**without exposing content to the server or admins** . Unlike traditional tools, only collaborators can access the data they create and share, with zero-knowledge architecture. It is recommended by Privacy Guides for its strong encryption and transparent development .  
-**Best for:** Teams with strict privacy and confidentiality requirements who need real-time collaboration without trusting the server operator with content, particularly legal, activist, and privacy-sensitive organizations.
-
-### Mattermost
-**Stack:** Go / React / PostgreSQL | **License:** MIT (Team Edition) / Open Core
-Mattermost is an open-source messaging platform designed for **secure, self-hosted team communication**, positioned as a Slack alternative for organizations that cannot put data in a public cloud . It offers channels, playbooks, and deep integrations with DevOps toolchains, with full control over encryption, data residency, and compliance. **Playbooks** turn repetitive processes into guided checklists with automatic timeline capture, which is a unique advantage for incident response . The Team Edition provides uncapped message history; Enterprise adds SSO, playbooks, and advanced compliance .  
-**Best for:** DevOps, engineering, and security teams needing a self-hosted, compliance-ready chat platform with tight integration into their software delivery pipeline.
-
-### Huly
-**Stack:** TypeScript / PostgreSQL / Elasticsearch / Redpanda | **License:** EPL-2.0
-Huly is an open-source all-in-one workspace positioned as a replacement for Linear, Slack, and Notion, bundling chat, project management (issues, sprints, milestones), collaborative documents, a planner and calendar, and an HR/recruiting module . It is **self-hosted and fast**, with granular permissions and a modern, minimal UI . It is heavy: a single active workspace consumes roughly 2.4 GB across Huly, Elasticsearch, Redpanda, and Postgres . LiveKit (voice/video), mail, and AI bot are optional upstream add-ons .  
-**Best for:** Engineering teams wanting a self-hosted Linear + Slack + Notion replacement with issue tracking, chat, and docs in one platform, accepting significant infrastructure requirements.
-
-### Buzz
-**Stack:** Rust / Nostr Protocol / PostgreSQL / Redis | **License:** Apache-2.0
-Buzz is an open-source workspace from Block that unifies team chat, Git repositories, and **AI agent collaboration** in a single self-hosted relay . Its defining feature is **cryptographic identity for both humans and AI agents** using Nostr keys: every message, Git event, and agent action is a signed event, creating a verifiable audit trail of who (or what) did what . Agents have their own keys, channel memberships, and audit trails, scoped by identity rather than permission flags—the same way you would scope a teammate . Channels can become rooms where patches, CI, review, and merge decisions live together . **Important:** The project is very new (November 2026); mobile clients and push notifications are still being wired up .  
-**Best for:** Technical teams wanting a self-hosted Slack + GitHub replacement with first-class AI agent identities and cryptographic auditability, accepting early-stage maturity.
-
-### Folio
-**Stack:** TypeScript / Git-backed | **License:** Open Source
-Folio is an AI-assisted, open-source alternative to Notion and Confluence where the **team wiki lives in Git**, with real-time editing, data tables, whiteboards, offline mode, and first-class AI agents . Every space has a `.agent` folder where instructions for the space's AI assistant are written as ordinary pages, versioned in Git and reviewable . **SCIM 2.0** support allows Okta, Microsoft Entra ID, Keycloak, OneLogin, and JumpCloud to create, update, and deactivate people and groups, with deactivation ending all sessions and tokens at once . Spaces can be **published as read-only websites** without requiring accounts, with per-space controls for downloads and AI access .  
-**Best for:** Teams wanting a Git-native wiki with transparent, version-controlled AI agent instructions, SCIM provisioning, and the option to publish public documentation from the same space.
-
-### Sync-in
-**Stack:** Node.js / (Check repository) | **License:** AGPL-3.0
-Sync-in is a self-hosted platform for **file storage, synchronization, and team collaboration**, designed to keep files readable on your filesystem while adding collaboration features only where needed . Features include spaces and shares with **fine-grained permissions**, role-based access control, **OIDC, LDAP, and MFA** authentication, collaborative document editing via Collabora Online, OnlyOffice, and Euro-Office, activity tracking, comments, notifications, and file locking . It supports **WebDAV** for file explorers and third-party clients, with desktop and CLI clients for Windows, macOS, and Linux .  
-**Best for:** Teams whose primary collaboration need is secure file storage and document co-editing with granular access control, particularly those wanting files to remain readable on the underlying filesystem.
+| Platform | Starting Paid Tier Pricing | Free Plan Limits / Trial Limits | Company Scale (Revenue / Valuation) | Primary Focus |
+|:---|:---|:---|:---|:---|
+| **Microsoft Teams** | **$4.00** /user/month (Teams Essentials, annual commitment) | **Permanent Free Tier:** Personal/Small groups; max 60 min group meetings, up to 100 participants, 5 GB cloud storage per user. Lacks meeting recordings and enterprise admin controls. | **~$3.87 Trillion** Market Cap (Microsoft NASDAQ: MSFT; ~$8B–$10B estimated attributed Teams run-rate) | Enterprise chat, video meetings, and Microsoft 365 ecosystem hub |
+| **Google Workspace** | **$7.00** /user/month (Business Starter, annual commitment; $8.40/mo flexible) | **14-day Free Trial:** Full feature access on selected plan capped at up to 10 users during trial. (Google Workspace Essentials Starter is also available for existing domains without custom email). | **~$3.47 Trillion** Market Cap (Alphabet NASDAQ: GOOGL; ~$30B+ Google Cloud run-rate) | Cloud productivity suite (Docs, Sheets, Drive, Meet, Chat spaces) |
+| **Slack** | **$7.25** /user/month (Slack Pro, billed annually; $8.75/mo flexible) | **Permanent Free Plan:** 90 days of searchable message & file history (older items hidden; deleted after 1 yr), max 10 app integrations, 1-on-1 huddles only, 5 GB storage. | **$27.7 Billion** Acquisition Valuation (Salesforce NYSE: CRM; >$1.7B Slack ARR) | Real-time channel messaging, huddles, and Slack Connect workflows |
+| **Notion** | **$10.00** /user/month (Notion Plus, billed annually; $12.00/mo flexible) | **Permanent Free Plan:** Unlimited blocks & pages for solo users; **strict 1,000 block lifetime cap** for workspaces with 2+ members; 5 MB file upload limit; 7-day page history; 10 guests. | **$11.0 Billion** Valuation (Private; >$600 Million Annual Recurring Revenue) | Flexible docs, structured relational databases, wikis, and teamspaces |
+| **Asana** | **$10.99** /user/month (Asana Starter, billed annually; $13.49/mo flexible) | **Permanent Personal Plan:** Capped at **up to 2 users** per workspace; basic List/Board/Calendar views only (no Timeline/Gantt, custom fields, rules, or reporting dashboards); 100 MB per file limit. | **~$2.3 Billion** Market Cap (NYSE: ASAN; ~$800 Million annual revenue) | Work management, task tracking, and cross-functional project portfolios |
 
 ---
 
-## 📊 Comparison at a Glance
+## 💻 Open-Source Software
 
-| Software | License | Stack | E2EE | SSO/SCIM | All-in-One | Self-Hosted | Best For |
-|----------|---------|-------|------|----------|------------|-------------|----------|
-| **Slack** | Proprietary | Cloud | ❌ | ✅ | ❌ | ❌ | Channel messaging + Connect |
-| **Microsoft Teams** | Proprietary | Cloud | ❌ | ✅ | ✅ | ❌ | Microsoft 365 estates |
-| **Notion** | Proprietary | Cloud | ❌ | (Enterprise) | ✅ | ❌ | Flexible docs + databases |
-| **Calab** | Open Source | LiveKit/Postgres | ❌ | ✅ OIDC/LDAPS | ✅ | ✅ | Private rooms + calls + boards |
-| **OneCamp** | AGPL-3.0 | Go/Next.js | ❌ | ✅ SAML/OIDC/SCIM | ✅ | ✅ | All-in-one + AI teammates |
-| **Colanode** | Apache-2.0 | TS/Postgres | ❌ | (Check) | ✅ | ✅ | Local-first offline workspace |
-| **CryptPad** | Open Source | JavaScript | ✅ Full | (Check) | ✅ | ✅ | Encrypted collaboration |
-| **Mattermost** | MIT (Team) | Go/Postgres | ❌ | (Enterprise) | ❌ (Chat) | ✅ | Developer chat + playbooks |
-| **Huly** | EPL-2.0 | TypeScript | ❌ | (Check) | ✅ | ✅ | Linear+Slack+Notion |
-| **Buzz** | Apache-2.0 | Rust/Nostr | (Signed events) | (Check) | ✅ (Chat+Git) | ✅ | AI + human workspace |
-| **Folio** | Open Source | TypeScript/Git | ❌ | ✅ SCIM | (Wiki) | ✅ | Git-native wiki + AI |
-| **Sync-in** | AGPL-3.0 | Node.js | ❌ | ✅ OIDC/LDAP/MFA | (Files) | ✅ | File-centric collaboration |
+Self-hosted, privacy-respecting, and open-source collaboration platforms. Repositories are ranked below in descending order by GitHub stargazer count.
+
+---
+
+### AppFlowy [![GitHub stars](https://img.shields.io/github/stars/AppFlowy-IO/AppFlowy?style=social&color=white)](https://github.com/AppFlowy-IO/AppFlowy/stargazers)
+- **Repository:** [AppFlowy-IO/AppFlowy](https://github.com/AppFlowy-IO/AppFlowy)
+- **Stack:** Flutter / Rust / PostgreSQL | **License:** AGPL-3.0
+- **Overview:** AppFlowy is a privacy-first, open-source alternative to Notion. Built with Flutter and Rust, it provides complete data ownership through local storage and self-hosted cloud sync. Features include rich markdown documents, relational databases, Kanban boards, AI assistance, and offline support.
+- **Best For:** Individuals and teams seeking a high-performance, native desktop and mobile workspace with uncompromising data ownership.
+
+---
+
+### AFFiNE [![GitHub stars](https://img.shields.io/github/stars/toeverything/AFFiNE?style=social&color=white)](https://github.com/toeverything/AFFiNE/stargazers)
+- **Repository:** [toeverything/AFFiNE](https://github.com/toeverything/AFFiNE)
+- **Stack:** TypeScript / Rust / CRDT / Node.js | **License:** MIT
+- **Overview:** AFFiNE is a next-generation open-source workspace merging docs, whiteboards, and multimodal databases into a single canvas. Positioned as a unified alternative to Notion and Miro, it utilizes local-first architecture and CRDT algorithms for real-time multiplayer co-editing without cloud lock-in.
+- **Best For:** Creative and engineering teams needing visual whiteboards seamlessly tied to structured documentation and wikis.
+
+---
+
+### Rocket.Chat [![GitHub stars](https://img.shields.io/github/stars/RocketChat/Rocket.Chat?style=social&color=white)](https://github.com/RocketChat/Rocket.Chat/stargazers)
+- **Repository:** [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat)
+- **Stack:** JavaScript / TypeScript / Node.js / MongoDB | **License:** MIT
+- **Overview:** Rocket.Chat is an enterprise-grade communications hub supporting team chat, omnichannel customer service, voice and video conferencing, file sharing, and Matrix federation. It provides extensive compliance controls, end-to-end encryption, and LDAP/SAML integrations.
+- **Best For:** Regulated industries, healthcare, defense, and enterprises needing full control over team chat and omnichannel operations.
+
+---
+
+### Outline [![GitHub stars](https://img.shields.io/github/stars/outline/outline?style=social&color=white)](https://github.com/outline/outline/stargazers)
+- **Repository:** [outline/outline](https://github.com/outline/outline)
+- **Stack:** TypeScript / React / Node.js / PostgreSQL / Redis | **License:** BSL 1.1 / Open Source
+- **Overview:** Outline is a fast, intuitive knowledge base and documentation platform for growing teams. It features a markdown-first editor, real-time multiplayer editing, nested document hierarchy, fine-grained access control, and integrations with Slack, Figma, and Google Workspace.
+- **Best For:** Teams that want an ultra-clean, snappy internal knowledge base and documentation wiki.
+
+---
+
+### Mattermost [![GitHub stars](https://img.shields.io/github/stars/mattermost/mattermost?style=social&color=white)](https://github.com/mattermost/mattermost/stargazers)
+- **Repository:** [mattermost/mattermost](https://github.com/mattermost/mattermost)
+- **Stack:** Go / React / PostgreSQL | **License:** MIT (Team Edition) / Commercial
+- **Overview:** Mattermost is an open-source messaging platform designed for secure, self-hosted team communication and DevOps coordination. Beyond channels and direct messaging, **Playbooks** provide structured checklists and automated incident workflows directly within chat rooms.
+- **Best For:** DevSecOps, engineering, and cybersecurity teams requiring audit trails and compliance-ready incident management.
+
+---
+
+### Nextcloud Hub [![GitHub stars](https://img.shields.io/github/stars/nextcloud/server?style=social&color=white)](https://github.com/nextcloud/server/stargazers)
+- **Repository:** [nextcloud/server](https://github.com/nextcloud/server)
+- **Stack:** PHP / JavaScript / MariaDB / PostgreSQL / Redis | **License:** AGPL-3.0
+- **Overview:** Nextcloud Hub is an on-premises content collaboration platform combining Nextcloud Files, Nextcloud Talk (chat and video calls), Nextcloud Groupware (calendar, mail, contacts), and Nextcloud Office (collaborative document editing via Collabora Online or OnlyOffice).
+- **Best For:** Organizations looking for a complete, self-hosted Google Workspace or Microsoft 365 replacement under their own data center governance.
+
+---
+
+### Buzz [![GitHub stars](https://img.shields.io/github/stars/block/buzz?style=social&color=white)](https://github.com/block/buzz/stargazers)
+- **Repository:** [block/buzz](https://github.com/block/buzz)
+- **Stack:** Rust / Nostr Protocol / PostgreSQL / Redis | **License:** Apache-2.0
+- **Overview:** Built by Block, Buzz combines team communication, Git repositories, and autonomous AI agent workflows into a single self-hosted relay. Utilizing the decentralized **Nostr protocol**, every interaction—whether from human or AI teammate—is a cryptographically signed event that creates an immutable, verifiable audit log.
+- **Best For:** Technical and AI-first engineering teams wanting cryptographic identity, transparent agent accountability, and Git-native collaboration.
+
+---
+
+### Huly [![GitHub stars](https://img.shields.io/github/stars/hcengineering/platform?style=social&color=white)](https://github.com/hcengineering/platform/stargazers)
+- **Repository:** [hcengineering/platform](https://github.com/hcengineering/platform)
+- **Stack:** TypeScript / PostgreSQL / Elasticsearch / Redpanda | **License:** EPL-2.0
+- **Overview:** Huly is an all-in-one open-source digital office and project management platform designed as a self-hosted alternative to Linear, Jira, Slack, and Notion. It bundles project trackers (issues, milestones, sprints), collaborative documents, chat, team calendars, and virtual office spaces.
+- **Best For:** Software product teams wanting unified issue tracking, chat, and wikis with modern desktop responsiveness.
+
+---
+
+### Zulip [![GitHub stars](https://img.shields.io/github/stars/zulip/zulip?style=social&color=white)](https://github.com/zulip/zulip)
+- **Repository:** [zulip/zulip](https://github.com/zulip/zulip)
+- **Stack:** Python / Django / TypeScript / PostgreSQL | **License:** Apache-2.0
+- **Overview:** Zulip is an open-source team chat tool with a unique topic-based threading model. By combining the speed of real-time messaging with the structured asynchronous clarity of email threads, Zulip prevents chatter fatigue and ensures discussions remain organized.
+- **Best For:** Distributed and asynchronous teams across different time zones that suffer from communication overload in conventional chat rooms.
+
+---
+
+### Element [![GitHub stars](https://img.shields.io/github/stars/element-hq/element-web?style=social&color=white)](https://github.com/element-hq/element-web/stargazers)
+- **Repository:** [element-hq/element-web](https://github.com/element-hq/element-web)
+- **Stack:** TypeScript / React / Matrix Protocol | **License:** AGPL-3.0
+- **Overview:** Element is a flagship web client built on top of the decentralized **Matrix** protocol. It provides default end-to-end encryption (E2EE), voice/video conferencing, and federated communication across different organizations and private server instances.
+- **Best For:** Organizations seeking sovereign, federated communication with military-grade end-to-end encryption.
+
+---
+
+### Planka [![GitHub stars](https://img.shields.io/github/stars/plankanban/planka?style=social&color=white)](https://github.com/plankanban/planka/stargazers)
+- **Repository:** [plankanban/planka](https://github.com/plankanban/planka)
+- **Stack:** JavaScript / Node.js / React / PostgreSQL | **License:** AGPL-3.0
+- **Overview:** Planka is an open-source, real-time collaborative Kanban tracking board alternative to Trello. It supports unlimited projects, custom task cards, background customizers, member assignments, file attachments, and OIDC/SSO authentication.
+- **Best For:** Teams that need a lightweight, self-hosted agile board without complex enterprise bloat.
+
+---
+
+### CryptPad [![GitHub stars](https://img.shields.io/github/stars/cryptpad/cryptpad?style=social&color=white)](https://github.com/cryptpad/cryptpad/stargazers)
+- **Repository:** [cryptpad/cryptpad](https://github.com/cryptpad/cryptpad)
+- **Stack:** JavaScript / Node.js | **License:** AGPL-3.0
+- **Overview:** CryptPad is a zero-knowledge, **fully end-to-end encrypted** collaboration suite. It provides real-time co-authoring for rich text documents, spreadsheets, code, presentations, forms, and whiteboards where client-side cryptography guarantees that neither hosting providers nor server administrators can read user content.
+- **Best For:** Privacy-sensitive, legal, civil society, and activist organizations requiring absolute confidentiality.
+
+---
+
+### Colanode [![GitHub stars](https://img.shields.io/github/stars/colanode/colanode?style=social&color=white)](https://github.com/colanode/colanode/stargazers)
+- **Repository:** [colanode/colanode](https://github.com/colanode/colanode)
+- **Stack:** TypeScript / PostgreSQL (pgvector) / Redis / S3 | **License:** Apache-2.0
+- **Overview:** Colanode is an open-source, **local-first** team workspace combining chat channels, relational databases, collaborative pages, and file sharing. Local SQLite instances allow clients to operate fully offline, seamlessly syncing changes via CRDTs once connectivity resumes.
+- **Best For:** Teams that demand offline-first capability, desktop speed, and complete database self-hosting.
+
+---
+
+### Sync-in [![GitHub stars](https://img.shields.io/github/stars/Sync-in/server?style=social&color=white)](https://github.com/Sync-in/server/stargazers)
+- **Repository:** [Sync-in/server](https://github.com/Sync-in/server)
+- **Stack:** Node.js / WebDAV / PostgreSQL | **License:** AGPL-3.0
+- **Overview:** Sync-in is a sovereign platform for file storage, folder synchronization, and document co-editing. Unlike platforms that obscure storage under opaque database blobs, Sync-in preserves direct readability on host filesystems while offering fine-grained permissions, WebDAV, and Collabora/OnlyOffice co-editing.
+- **Best For:** Teams prioritizing transparent file storage, document co-editing, and direct filesystem sovereignty.
+
+---
+
+### Calab [![GitHub stars](https://img.shields.io/github/stars/itrcz/calab?style=social&color=white)](https://github.com/itrcz/calab/stargazers)
+- **Repository:** [itrcz/calab](https://github.com/itrcz/calab)
+- **Stack:** LiveKit / Node.js / Python / Go / PostgreSQL | **License:** Open Source
+- **Overview:** Calab is a self-hosted workspace combining chat, WebRTC voice/video calls via LiveKit, task boards, wikis, calendar, and email into one unified deployment. It features workspace-scoped OIDC SSO with LDAPS lifecycle sync and isolated rooms that hide content even from platform admins.
+- **Best For:** Teams wanting a self-hosted platform with room-level privacy boundaries and integrated video meetings.
+
+---
+
+### Folio [![GitHub stars](https://img.shields.io/github/stars/evergreen-it-dev/folio?style=social&color=white)](https://github.com/evergreen-it-dev/folio/stargazers)
+- **Repository:** [evergreen-it-dev/folio](https://github.com/evergreen-it-dev/folio)
+- **Stack:** TypeScript / Git-backed / React | **License:** Open Source
+- **Overview:** Folio is an AI-assisted, Git-native team wiki where documentation resides as plain Markdown files versioned directly in Git repositories. It features real-time collaborative editing, SCIM 2.0 provisioning, and an integrated Model Context Protocol (MCP) server for developer AI agents.
+- **Best For:** Engineering teams desiring version-controlled documentation in Git alongside automated MCP-enabled AI assistants.
+
+---
+
+### OneCamp [![GitHub stars](https://img.shields.io/github/stars/OneMana-Soft/OneCamp-fe?style=social&color=white)](https://github.com/OneMana-Soft/OneCamp-fe/stargazers)
+- **Repository:** [OneMana-Soft/OneCamp-fe](https://github.com/OneMana-Soft/OneCamp-fe)
+- **Stack:** Go / Next.js / LiveKit / Tiptap / PostgreSQL | **License:** AGPL-3.0
+- **Overview:** OneCamp is an all-in-one workspace unifying real-time chat, task Kanban boards, multiplayer collaborative docs, whiteboards (Excalidraw), HD video calls, and AI teammates bounded by user permissions.
+- **Best For:** Organizations seeking a single Docker Compose stack with enterprise authentication (SAML, OIDC, SCIM) and native AI agents.
+
+---
+
+## 📊 Feature Matrix & Comparison at a Glance
+
+| Software | License | Primary Stack | E2EE Support | SSO / Directory Sync | Architecture | Deployment Model | Primary Focus |
+|:---|:---|:---|:---:|:---:|:---:|:---|:---|
+| **AppFlowy** | AGPL-3.0 | Flutter / Rust | Optional / Cloud | Enterprise | Local-First / Cloud | Self-Hosted / Cloud | Notion Alternative / Private Docs |
+| **AFFiNE** | MIT | TypeScript / Rust | ❌ | Roadmap | Local-First (CRDT) | Self-Hosted / Cloud | Unified Docs + Canvas Whiteboards |
+| **Rocket.Chat** | MIT | Node.js / Mongo | ✅ (Omni/Chat) | ✅ SAML / LDAP / OIDC | Client-Server | Self-Hosted / Cloud | Enterprise Team Chat & Customer Comms |
+| **Outline** | BSL 1.1 / Open | TypeScript / Postgres | ❌ | ✅ OIDC / SAML / Slack | Client-Server | Self-Hosted / Cloud | Fast Team Knowledge Base & Docs |
+| **Mattermost** | MIT / Comm. | Go / Postgres | ❌ | ✅ OIDC / SAML / LDAP | Client-Server | Self-Hosted / Private Cloud | DevSecOps & Incident Chatrooms |
+| **Nextcloud Hub** | AGPL-3.0 | PHP / Postgres | ✅ (Files App) | ✅ LDAP / SAML / OIDC | Modular Suite | Self-Hosted / On-Prem | Full Google / M365 Suite Alternative |
+| **Buzz** | Apache-2.0 | Rust / Nostr | (Signed Events) | Custom / Nostr Keys | Decentralized Relay | Self-Hosted | AI-Teammates & Cryptographic Audit |
+| **Huly** | EPL-2.0 | TS / Postgres | ❌ | Planned | Microservices | Self-Hosted / Cloud | Linear + Slack + Notion Replacement |
+| **Zulip** | Apache-2.0 | Python / Django | ❌ | ✅ LDAP / SAML / OIDC | Threaded Streams | Self-Hosted / Cloud | Topic-Threaded Asynchronous Chat |
+| **Element** | AGPL-3.0 | Matrix / React | ✅ (Native E2EE)| ✅ OpenID / SAML | Federated (Matrix) | Self-Hosted / Cloud | Federated & Encrypted Messaging |
+| **Planka** | AGPL-3.0 | Node.js / Postgres | ❌ | ✅ OIDC | Client-Server | Self-Hosted | Lightweight Agile Kanban Boards |
+| **CryptPad** | AGPL-3.0 | JavaScript / Node | ✅ (Zero-Knowledge)| Optional | Client-side Encrypted | Self-Hosted / Web | Zero-Knowledge Document Co-Editing |
+| **Colanode** | Apache-2.0 | TS / SQLite / Postgres| ❌ | Community | Local-First (CRDT) | Self-Hosted | Local-First Chat + Notion Hybrid |
+| **Sync-in** | AGPL-3.0 | Node.js / WebDAV | ❌ | ✅ OIDC / LDAP / MFA | Filesystem-native | Self-Hosted | Sovereign File Storage & Co-editing |
+| **Calab** | Open Source | LiveKit / Postgres | ❌ | ✅ OIDC / LDAPS | Client-Server | Self-Hosted | Private Rooms, Calls & Task Boards |
+| **Folio** | Open Source | TypeScript / Git | ❌ | ✅ SCIM 2.0 | Git-Backed Wiki | Self-Hosted | Git-Native Markdown Docs + MCP |
+| **OneCamp** | AGPL-3.0 | Go / Next.js | ❌ | ✅ SAML / SCIM | Docker Stack | Self-Hosted | All-in-One Collaboration + AI Agents |
+
+---
+
+## 🎯 Selection Guide: Choosing the Right Private Workspace
+
+To determine the ideal collaboration platform for your team, consider these architectural requirements:
+
+1. **Strict End-to-End Encryption (Zero-Trust):** Choose **[CryptPad](#cryptpad-)** for complete zero-knowledge client-side encrypted docs, or **[Element](#element-)** for federated, encrypted chat.
+2. **Local-First & Offline Resilience:** Choose **[AppFlowy](#appflowy-)**, **[AFFiNE](#affine-)**, or **[Colanode](#colanode-)** to ensure your team can create documents and manage databases without continuous internet connectivity.
+3. **Developer & DevSecOps Workflows:** Choose **[Mattermost](#mattermost-)** for incident response playbooks, **[Folio](#folio-)** for Git-versioned documentation, or **[Buzz](#buzz-)** for Nostr-verified AI-agent audit trails.
+4. **All-in-One Enterprise Hubs:** Choose **[Nextcloud Hub](#nextcloud-hub-)** or **[Huly](#huly-)** if you want to replace multiple disjointed SaaS subscriptions with a single self-hosted server stack.
+5. **Asynchronous Discussion Clarity:** Choose **[Zulip](#zulip-)** to eliminate channel chaos through topic-threaded streams.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source Private Team Collaboration Workspace tool that should be listed here, please open a pull request with:
+Contributions are welcome! If you know of an outstanding open-source private collaboration platform or self-hosted workspace that should be added to this list:
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source. Note that the open-source ecosystem **splits** between **all-in-one workspaces** (Calab, OneCamp, Colanode, Huly) that bundle chat, docs, and tasks, **encrypted collaboration suites** (CryptPad) for maximum confidentiality, **developer-focused chat** (Mattermost) with strong DevOps integrations, and **file-centric platforms** (Sync-in). **CryptPad** is the only option offering true end-to-end encryption for collaborative content, making it uniquely suited for privacy-critical teams . **Calab** and **OneCamp** offer the broadest feature consolidation with enterprise SSO and room-level privacy controls, while **Colanode** leads on local-first offline capability . Commercial platforms like Slack and Microsoft Teams remain the default for organizations that do not require self-hosting, but the open-source alternatives have closed the UX gap significantly in 2026 [citation:5][citation:10].
+1. Fork this repository.
+2. Create a new branch: `git checkout -b feature/add-tool`.
+3. Add the project with its name, GitHub stargazers social badge, description, technology stack, and primary use case.
+4. Ensure the repository is sorted correctly by star count.
+5. Submit a pull request.
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
-
----
-
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+This curated list is released under the [CC0 1.0 Universal (Public Domain)](https://creativecommons.org/publicdomain/zero/1.0/). Projects listed maintain their respective individual licenses.
